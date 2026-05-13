@@ -55,7 +55,7 @@ class RegistroVotacaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = RegistroVotacao
         fields = '__all__'
-        read_only_fields = fields
+        read_only_fields = ['eleitor', 'eleicao', 'data_hora']
 
 class VotoSerializer(serializers.ModelSerializer):
     candidato_nome_urna = serializers.ReadOnlyField(source='candidato.nome_urna', allow_null=True)
